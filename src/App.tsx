@@ -1,3 +1,4 @@
+import './app.css';
 import BlogHome from './page/blogs/blogHome/blogHome';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
