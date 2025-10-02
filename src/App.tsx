@@ -1,7 +1,14 @@
+import BlogHome from './page/blogs/blogHome/blogHome';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div>
-      <h1>Hello from App Component!</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/blogs" element={<BlogHome />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
