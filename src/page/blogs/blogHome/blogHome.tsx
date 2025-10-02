@@ -2,6 +2,13 @@ import '../blog.css';
 import BlogFavourite from './blogFavourite';
 
 export default function BlogHome() {
+
+    const CATEGORIES = [
+        "TECH",
+        "CASUAL TECH",
+        "NON TECH"
+    ]
+
     return (
 
         <section id="blog-home">
@@ -12,6 +19,11 @@ export default function BlogHome() {
 
                 <BlogFavourite />
 
+                <div id="category-tab">
+                    {CATEGORIES.map( category => <CategoryTab category={category}/> )}
+                </div>
+                
+
             </main>
 
             {/* Empty Divs. Don't Delete */}
@@ -19,4 +31,16 @@ export default function BlogHome() {
         </section>
 
     );
+}
+
+function CategoryTab({ 
+    category 
+} : { category: string}) {
+
+    return (
+        <div className='category-container'>
+            {category}
+        </div>
+    )
+
 }

@@ -1,7 +1,13 @@
 #blog-home {
+
+    --blog-bg-color: #172C35;
+    --blog-subsection-bg-color: #0d1f16;
+    --blog-title-bg-color: #22c55e;
+    --blog-title-description-color: #d1fae5;
+
     min-height: 100vh;
     min-height: 100vh;
-    background-color: #172C35;
+    background-color: var(--blog-bg-color);
 
     grid-template-columns: 1fr 2fr 1fr;
     display: grid;
@@ -9,8 +15,8 @@
 
 #blog-home main {
 
-    display: flex;
-    align-items: flex-start;
+
+
 }
 
 /* -------------------- Favourite Blog Section -------------------- */
@@ -18,8 +24,8 @@
 
     padding: 2rem;
     width: 100%;
-    background-color: #0d1f16;
-    color: #22c55e;
+    background-color: var(--blog-subsection-bg-color);
+    color: var(--blog-title-bg-color);
     
 }
 
@@ -28,7 +34,7 @@
 
     font-style: italic;
     font-size: 3rem;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--blog-title-description-color);
 
 }
 
@@ -57,7 +63,7 @@
 
     font-size: 1.1rem;
     padding: 5px 0px ;
-    color: #d1fae5;
+    color: var(--blog-title-description-color);
 }
 
 #blog-favourite-item > .date {
@@ -67,4 +73,34 @@
     display: flex;
     align-items: center;
     justify-content: end;
+}
+
+/* -------------------- All Blog List -------------------- */
+
+/* ------- Category Tab ------- */
+#blog-home #category-tab {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-top: 35px;
+    color: var(--blog-title-description-color);
+}
+
+#category-tab .category-container {
+    padding: 8px 20px;
+    border: 1px solid var(--blog-title-description-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#category-tab .category-container.active {
+    background-color: #22c55e;
+    color: white;
+    border-color: #22c55e;
+}
+
+#category-tab .category-container:hover {
+    background-color: rgba(34, 197, 94, 0.2);
 }
