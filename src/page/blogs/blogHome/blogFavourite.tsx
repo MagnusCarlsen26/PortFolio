@@ -39,7 +39,7 @@ export default function BlogFavourite() {
 
             <span className='title'>Khushal's Favourite</span>       
             <div className='items'>
-                {favouriteBlogItems.map( blog => <FavouriteBlog blog={blog}/> )}
+                {favouriteBlogItems.map( blog => <BlogItem blog={blog}/> )}
             </div>    
             
 
@@ -47,7 +47,7 @@ export default function BlogFavourite() {
     );
 }
 
-function FavouriteBlog({ 
+export function BlogItem({ 
     blog 
 }: { blog: BlogBanner }) {
 
