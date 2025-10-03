@@ -16,7 +16,7 @@ nav {
     align-items: center;
     height: 100%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 30px;
 
     /* background-color: rgba(255, 255, 255, 0.1); */
     padding: 5px 10px;
@@ -39,13 +39,13 @@ nav {
 }
 
 .navbar-home-link:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .navbar-home-link:last-child {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .navbar-home-link:not(:first-child):not(:last-child) {
