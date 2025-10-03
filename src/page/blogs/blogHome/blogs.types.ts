@@ -6,6 +6,7 @@ export type Blog = {
     category: string
     date: string;
     year: number;
-    description?: string;
+    description: string;
     favourite: boolean;
+
 };
