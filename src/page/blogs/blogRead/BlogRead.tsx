@@ -2,6 +2,7 @@ import "../blog.css";
 import { useParams } from "react-router-dom";
 import { Blog } from '../blogHome/blogs.types';
 import blogsData from '../../../constants/blogs.json';
+import Footer from '../../footer/Footer'; // Import the Footer component
 
 import CalenderSvg from "../../../assets/svgs/CalenderSvg";
 import TagSvg from "../../../assets/svgs/TagSvg";
@@ -23,6 +24,7 @@ const BlogRead = () => {
     }
 
     return (
+    <>
         <main id="blog-read">
 
             {/* Empty Divs. Don't Delete */}
@@ -64,6 +66,8 @@ const BlogRead = () => {
             {/* Empty Divs. Don't Delete */}
             <div></div>
         </main>
+        <Footer />
+    </>
     );
 };
  

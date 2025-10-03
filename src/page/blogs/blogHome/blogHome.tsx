@@ -4,6 +4,7 @@ import BlogFavourite from './blogFavourite';
 import { BlogItem } from './blogFavourite';
 import { Blog } from './blogs.types';
 import Blogs from "../../../constants/blogs.json"
+import Footer from '../../footer/Footer'; // Import the Footer component
 
 // NOTE: Hoisted to top so it isnt re declared
 const CATEGORIES = [
@@ -20,7 +21,7 @@ export default function BlogHome() {
     const [selectedCategory, setSelectedCategory] = useState<(typeof CATEGORIES)[number]>("TECH");
 
     return (
-
+    <>
         <section id="blog-home">
             {/* Empty Divs. Don't Delete */}
             <div></div>
@@ -53,6 +54,8 @@ export default function BlogHome() {
             {/* Empty Divs. Don't Delete */}
             <div></div>
         </section>
+        <Footer /> {/* Add Footer here */}
+    </>
 
     );
 }
