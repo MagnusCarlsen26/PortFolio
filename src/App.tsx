@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import './app.css';
 import BlogHome from './page/blogs/blogHome/blogHome';
-import Navbar from './page/navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import BlogRead from './page/blogs/blogRead/BlogRead';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/blogs" element={<BlogHome />} />
+          <Route path="/blog/read/:slug" element={<BlogRead />} />
         </Routes>
       </BrowserRouter>
     </div>
