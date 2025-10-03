@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './about.css';
 import Typewriter from '../../components/Typewriter'; // Import the new Typewriter component
+import SkillIcons from './SkillIcons'; // Import the new SkillIcons component
 
 const About: React.FC = () => {
   const whoamiCommand = "$ whoami";
@@ -73,9 +74,10 @@ const About: React.FC = () => {
         <section className="terminal-pane skills">
           <Typewriter
             command="$ ls skills/"
-            output={["C/C++ JavaScript Python NodeJS Flask MongoDB React NextJS Bootstrap Tailwind AWS Firebase Docker Kubernetes"]}
+            output={[]}
             delay={whoamiCommand.length * 200 + ("$ cat education.txt".length * 200) + 40} // Delay after education command finishes + stagger
           />
+          <SkillIcons /> {/* Render the SkillIcons component here */}
         </section>
       </div>
 

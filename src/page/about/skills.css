@@ -1,0 +1,61 @@
+.skill-category-section {
+  width: 100%;
+  margin-bottom: 15px; /* Reduced margin */
+  text-align: center;
+}
+
+.skill-category-title {
+  font-size: 1.2em; /* Smaller font size */
+  color: #fff;
+  margin-bottom: 10px; /* Reduced margin */
+  border-bottom: 1px solid #555; /* Thinner separator */
+  padding-bottom: 3px; /* Reduced padding */
+  display: inline-block;
+}
+
+.skill-icons-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Reduced gap between icons */
+}
+
+.skill-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduced gap for more compactness */
+  justify-content: center;
+  margin-top: 10px; /* Reduced margin */
+}
+
+.skill-category-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* Removed: specific styling for nth-child(2) */
+}
+
+.compact-skill-category-title {
+  font-size: 1.1em;
+  color: #fff;
+  margin: 0 5px 0 0; /* Adjusted margins for inline display */
+  white-space: nowrap;
+}
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #222;
+}
+
+.skill-icon img, .skill-icon svg {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  filter: brightness(1.5) contrast(1.5);
+}
