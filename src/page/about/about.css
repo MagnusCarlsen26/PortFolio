@@ -1,0 +1,107 @@
+.about-container {
+  font-family: 'monospace', monospace;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terminal-pane {
+  background-color: #000;
+  border: 1px solid #333;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.terminal-pane::before {
+  content: '┌──────────────────────────────────────────────┐';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  color: #555;
+  font-size: 0.8em;
+  white-space: pre;
+}
+
+.terminal-pane::after {
+  content: '└──────────────────────────────────────────────┘';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  color: #555;
+  font-size: 0.8em;
+  white-space: pre;
+}
+
+.terminal-pane.whoami::before,
+.terminal-pane.projects::before {
+  content: '┌──────────────────────────────────────────────┐';
+}
+
+.terminal-pane.whoami::after,
+.terminal-pane.projects::after {
+  content: '└──────────────────────────────────────────────┘';
+}
+
+.terminal-row {
+  display: flex;
+  gap: 10px;
+}
+
+.terminal-row .terminal-pane {
+  flex: 1;
+}
+
+.terminal-row .terminal-pane::before {
+  content: '┌───────────────────────┐';
+}
+
+.terminal-row .terminal-pane.experience::before,
+.terminal-row .terminal-pane.achievements::before {
+  content: '┬──────────────────────┐';
+  left: -10px; /* Adjust for border overlap */
+  width: calc(100% + 10px);
+}
+
+.terminal-row .terminal-pane::after {
+  content: '└───────────────────────┘';
+}
+
+.terminal-row .terminal-pane.experience::after,
+.terminal-row .terminal-pane.achievements::after {
+  content: '┴──────────────────────┘';
+  left: -10px;
+  width: calc(100% + 10px);
+}
+
+.command {
+  color: #0f0; /* Bright green for commands */
+  margin-bottom: 5px;
+}
+
+.output {
+  color: #e0e0e0; /* Muted gray/white for output */
+  white-space: pre-wrap;
+}
+
+.indent {
+  margin-left: 20px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background-color: #e0e0e0;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { background-color: transparent }
+  50% { background-color: #e0e0e0; }
+}
