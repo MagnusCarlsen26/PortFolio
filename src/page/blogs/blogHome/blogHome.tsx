@@ -1,46 +1,23 @@
+import { useState } from 'react';
 import '../blog.css';
 import BlogFavourite from './blogFavourite';
 import { BlogItem } from './blogFavourite';
-import { BlogBanner } from './blogs.types';
+import { Blog } from './blogs.types';
+import Blogs from "../../../constants/blogs.json"
+
+// NOTE: Hoisted to top so it isnt re declared
+const CATEGORIES = [
+    "TECH",
+    "CASUAL TECH",
+    "NON TECH"
+]
+
+const BLOGS: Record<string, Blog[]> = Blogs
 
 export default function BlogHome() {
 
-    const CATEGORIES = [
-        "TECH",
-        "CASUAL TECH",
-        "NON TECH"
-    ]
 
-    const BLOGS: BlogBanner[] = [
-        {
-            id: "another-id",
-            slug: "another-blog",
-            title: "Another Blog Post with a Significantly Longer Title to Test Responsiveness",
-            date: "15 February 2024",
-            year: 2024,
-        },
-        {
-            id: "third-id",
-            slug: "third-blog-post",
-            title: "The Third Blog Entry Which Also Has an Extended Description",
-            date: "March 24",
-            year: 2024,
-        },
-        {
-            id: "fourth-id",
-            slug: "fourth-blog-post",
-            title: "A Fourth Blog Entry About Various and Sundry Things that Might Interest You",
-            date: "April 24",
-            year: 2024,
-        },
-        {
-            id: "fifth-id",
-            slug: "fifth-blog",
-            title: "My Fifth Blog",
-            date: "May 24",
-            year: 2024,
-        }
-    ]
+    const [selectedCategory, setSelectedCategory] = useState<(typeof CATEGORIES)[number]>("TECH");
 
     return (
 
@@ -53,11 +30,16 @@ export default function BlogHome() {
                 <BlogFavourite />
 
                 <div id="category-tab">
-                    {CATEGORIES.map( category => <CategoryTab category={category}/> )}
+                    {CATEGORIES.map( category => 
+                        <CategoryTab 
+                            category={category}
+                            onMouseDown={(category) => setSelectedCategory(category)}
+                        /> 
+                    )}
                 </div>
                 
                 <div id='blog-list'>
-                    {BLOGS.map( blog => <BlogItem blog={blog} /> )}
+                    {BLOGS[selectedCategory].map( blog => <BlogItem blog={blog} /> )}
                 </div>
 
             </main>
@@ -70,11 +52,18 @@ export default function BlogHome() {
 }
 
 function CategoryTab({ 
-    category 
-} : { category: string}) {
+    category,
+    onMouseDown
+} : { 
+    category: string,
+    onMouseDown: (category: (typeof CATEGORIES)[number]) => void
+}) {
 
     return (
-        <div className='category-container'>
+        <div 
+            className='category-container'
+            onMouseDown={() => onMouseDown(category)}
+        >
             {category}
         </div>
     )
