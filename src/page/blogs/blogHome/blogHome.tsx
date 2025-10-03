@@ -32,6 +32,7 @@ export default function BlogHome() {
                 <div id="category-tab">
                     {CATEGORIES.map( category => 
                         <CategoryTab 
+                            key={category}
                             category={category}
                             onMouseDown={(category) => setSelectedCategory(category)}
                         /> 
@@ -39,7 +40,12 @@ export default function BlogHome() {
                 </div>
                 
                 <div id='blog-list'>
-                    {BLOGS[selectedCategory].map( blog => <BlogItem blog={blog} /> )}
+                    {BLOGS[selectedCategory].map( blog => 
+                        <BlogItem 
+                            key={blog.slug}
+                            blog={blog} 
+                        /> 
+                    )}
                 </div>
 
             </main>
