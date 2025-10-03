@@ -1,0 +1,44 @@
+footer {
+    background-color: #134e4a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 5px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+}
+
+.footer-contact {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-contact p a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-contact svg {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    color: #a7f3d0;
+}
+
+.footer-contact a {
+    color: #a7f3d0;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
