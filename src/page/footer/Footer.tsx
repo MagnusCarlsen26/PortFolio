@@ -12,12 +12,12 @@ export default function Footer() {
                 <p><a href="tel:+919328576258"><PhoneSvg /> +91-9328576258</a></p>
                 <p><a href="mailto:khushal.sindhav26@gmail.com"><EmailSvg /> khushal.sindhav26@gmail.com</a></p>
                 <p>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/khushal-sindhav-109602229/" target="_blank" rel="noopener noreferrer">
                         <LinkedInSvg /> 
                     </a>
                 </p>
                 <p>
-                    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
+                    <a href="https://x.com/KHUSHALSINDHAV2" target="_blank" rel="noopener noreferrer">
                     <TwitterSvg /> 
                     </a>
                 </p>
