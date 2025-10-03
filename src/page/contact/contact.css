@@ -1,0 +1,186 @@
+:root {
+    --bg-color: #172C35;
+    --primary-color: #22c55e;
+    --secondary-color: #d1fae5;
+    --terminal-dark-bg: #1e1e1e;
+    --terminal-light-green: #00ff00;
+    --terminal-cyan: #00ffff;
+    --button-bg: #96DABB;
+    --button-text: #134e4a;
+    --blog-subsection-bg-color: #0d1f16;
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px; /* Title placement: 64–80px from top */
+  min-height: calc(100vh - var(--navbar-height, 0px) - var(--footer-height, 0px)); /* Adjust for navbar/footer if they are fixed */
+  background-color: var(--bg-color);
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 720px; /* Centered column with fixed width (~720px) */
+  padding: 20px;
+  box-sizing: border-box;
+  color: var(--secondary-color);
+}
+
+.contact-title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--primary-color);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-prompt {
+  background-color: var(--blog-subsection-bg-color);
+  color: var(--terminal-light-green);
+  padding: 10px;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.prompt-char {
+  color: var(--terminal-light-green);
+  margin-right: 8px;
+}
+
+.contact-methods {
+  margin-bottom: 30px;
+}
+
+.method-item {
+  display: flex;
+  align-items: center; /* Align items for consistent spacing */
+  margin-bottom: 8px;
+  font-family: 'Fira Code', monospace;
+  color: var(--secondary-color);
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeInFromLeft 0.5s ease-out forwards;
+}
+
+.method-item:nth-child(1) { animation-delay: 0.2s; }
+.method-item:nth-child(2) { animation-delay: 0.4s; }
+.method-item:nth-child(3) { animation-delay: 0.6s; }
+.method-item:nth-child(4) { animation-delay: 0.8s; }
+
+.method-label {
+  color: var(--terminal-cyan);
+  width: 100px; /* Adjusted width */
+  flex-shrink: 0;
+}
+
+.method-value {
+  color: var(--secondary-color);
+  word-break: break-all;
+}
+
+.method-value a {
+  color: inherit; /* Inherit color from parent (.method-value) */
+  text-decoration: none; /* Remove underline */
+}
+
+.message-section {
+  background-color: #2a2a2a; /* Slightly darker than --bg-color */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.message-intro {
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: var(--secondary-color);
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 12px 24px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 9999px; /* Pill shape */
+  cursor: pointer;
+  font-size: 1.05em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Fira Code', monospace;
+}
+
+.form-actions button:hover {
+  background-color: #b0e0d5; /* Slightly lighter shade of button-bg */
+  transform: scale(1.02);
+}
+
+.form-actions button:active {
+  transform: scale(0.98);
+}
+
+.success-message {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Fira Code', monospace;
+}

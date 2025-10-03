@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BlogRead from './page/blogs/blogRead/BlogRead';
 import Navbar from './page/navbar/Navbar';
 import Home from './page/home/Home'; // Import the new Home component
+import Contact from './page/contact/Contact'; // Import the new Contact component
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} /> {/* Add the Home component to the root path */}
+            <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<BlogHome />} />
             <Route path="/blog/read/:slug" element={<BlogRead />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
       </BrowserRouter>
     </div>
