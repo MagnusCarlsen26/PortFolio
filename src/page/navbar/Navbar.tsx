@@ -5,7 +5,10 @@ export default function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const isActive = (path: string) => location.pathname === path;
+    const isActive = (path: string) => {
+        if ( location.pathname.includes("blog/") ) return path === "/blogs" 
+        return location.pathname === path
+    };
 
     return (
         <nav>
