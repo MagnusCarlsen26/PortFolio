@@ -1,11 +1,11 @@
 .about-container {
   font-family: 'monospace', monospace;
-  background-color: #1a1a1a;
+  background-color: #172C35;
   color: #e0e0e0;
   padding: 20px;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .terminal-pane {
@@ -28,26 +28,8 @@
   }
 } */
 
-.terminal-pane.whoami {
-}
-
-.terminal-row:nth-child(2) .terminal-pane:nth-child(1) {
-}
-
-.terminal-row:nth-child(2) .terminal-pane:nth-child(2) {
-}
-
-.terminal-row:nth-child(3) .terminal-pane:nth-child(1) {
-}
-
-.terminal-row:nth-child(3) .terminal-pane:nth-child(2) {
-}
-
-.terminal-pane.projects {
-}
 
 .terminal-pane::before {
-  content: '┌──────────────────────────────────────────────┐';
   position: absolute;
   top: -1px;
   left: 0;
@@ -58,7 +40,6 @@
 }
 
 .terminal-pane::after {
-  content: '└──────────────────────────────────────────────┘';
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -68,19 +49,9 @@
   white-space: pre;
 }
 
-.terminal-pane.whoami::before,
-.terminal-pane.projects::before {
-  content: '┌──────────────────────────────────────────────┐';
-}
-
-.terminal-pane.whoami::after,
-.terminal-pane.projects::after {
-  content: '└──────────────────────────────────────────────┘';
-}
-
 .terminal-row {
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .terminal-row .terminal-pane {
@@ -88,23 +59,19 @@
 }
 
 .terminal-row .terminal-pane::before {
-  content: '┌───────────────────────┐';
 }
 
 .terminal-row .terminal-pane.experience::before,
 .terminal-row .terminal-pane.achievements::before {
-  content: '┬──────────────────────┐';
   left: -10px; /* Adjust for border overlap */
   width: calc(100% + 10px);
 }
 
 .terminal-row .terminal-pane::after {
-  content: '└───────────────────────┘';
 }
 
 .terminal-row .terminal-pane.experience::after,
 .terminal-row .terminal-pane.achievements::after {
-  content: '┴──────────────────────┘';
   left: -10px;
   width: calc(100% + 10px);
 }
@@ -127,28 +94,6 @@
 
 /* The staggered delay for these will be applied inline by Typewriter.tsx */
 
-/* Remove these specific staggered delays as Typewriter.tsx will handle them */
-.education .output p:nth-child(1) { /* animation-delay: 200ms; */ }
-.education .output p:nth-child(2) { /* animation-delay: 220ms; */ }
-.education .output p:nth-child(3) { /* animation-delay: 240ms; */ }
-
-.experience .output p:nth-child(1) { /* animation-delay: 260ms; */ }
-.experience .output p:nth-child(2) { /* animation-delay: 280ms; */ }
-.experience .output p:nth-child(3) { /* animation-delay: 300ms; */ }
-.experience .output p:nth-child(4) { /* animation-delay: 320ms; */ }
-.experience .output p:nth-child(5) { /* animation-delay: 340ms; */ }
-.experience .output p:nth-child(6) { /* animation-delay: 360ms; */ }
-.experience .output p:nth-child(7) { /* animation-delay: 380ms; */ }
-.experience .output p:nth-child(8) { /* animation-delay: 400ms; */ }
-.experience .output p:nth-child(9) { /* animation-delay: 420ms; */ }
-.experience .output p:nth-child(10) { /* animation-delay: 440ms; */ }
-
-.achievements .output p:nth-child(1) { /* animation-delay: 460ms; */ }
-.achievements .output p:nth-child(2) { /* animation-delay: 480ms; */ }
-.achievements .output p:nth-child(3) { /* animation-delay: 500ms; */ }
-.achievements .output p:nth-child(4) { /* animation-delay: 520ms; */ }
-.achievements .output p:nth-child(5) { /* animation-delay: 540ms; */ }
-.achievements .output p:nth-child(6) { /* animation-delay: 560ms; */ }
 
 .indent {
   margin-left: 20px;
@@ -167,28 +112,6 @@
   50% { background-color: #e0e0e0; }
 }
 
-/* Remove projects specific animations as Typewriter handles line-by-line output */
-/* The tree-line-grow and tree-bullet-pop keyframes can remain, but won't be used directly by Typewriter for staggering. */
-.projects .output p {
-  /* opacity: 0; */
-}
-
-.projects .output p.tree-line-animate {
-  /* animation: tree-line-grow 250ms ease-out forwards; */
-}
-
-.projects .output p.tree-bullet-animate {
-  /* animation: tree-bullet-pop 80ms ease-out forwards; */
-}
-
-@keyframes tree-line-grow {
-  from {
-    /* clip-path: inset(100% 0 0 0); */
-  }
-  to {
-    /* clip-path: inset(0 0 0 0); */
-  }
-}
 
 @keyframes tree-bullet-pop {
   from {
