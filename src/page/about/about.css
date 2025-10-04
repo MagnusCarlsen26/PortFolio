@@ -4,76 +4,54 @@
   color: #e0e0e0;
   padding: 20px;
   padding-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+}
+
+.about-container .left-column, .right-column{
   display: flex;
+  gap: 1px;
   flex-direction: column;
+  height: 100%;
+}
+
+.about-container .left-column > :last-child, .right-column > :last-child {
+  flex-grow: 1;
+}
+
+.about-container .left-column > * {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.about-container .right-column > * {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.about-container .left-column > :first-child {
+  border-top-left-radius: 20px;
+}
+
+.about-container .left-column > :first-child {
+  border-top-left-radius: 20px;
+}
+
+.about-container .left-column > :last-child {
+  border-bottom-left-radius: 20px;
+}
+
+.about-container .right-column > :first-child {
+  border-top-right-radius: 20px;
+}
+
+.about-container .right-column > :last-child {
+  border-bottom-right-radius: 20px;
 }
 
 .terminal-pane {
   background-color: #000;
-  border: 1px solid #333;
   padding: 10px;
-  box-sizing: border-box;
-  position: relative;
-  /* min-height: 50px; */ /* Removed minimum height for the panes */
-}
-
-/* @keyframes tmux-split-reveal {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-} */
-
-
-.terminal-pane::before {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  color: #555;
-  font-size: 0.8em;
-  white-space: pre;
-}
-
-.terminal-pane::after {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  color: #555;
-  font-size: 0.8em;
-  white-space: pre;
-}
-
-.terminal-row {
-  display: flex;
-  /* gap: 10px; */
-}
-
-.terminal-row .terminal-pane {
-  flex: 1;
-}
-
-.terminal-row .terminal-pane::before {
-}
-
-.terminal-row .terminal-pane.experience::before,
-.terminal-row .terminal-pane.achievements::before {
-  left: -10px; /* Adjust for border overlap */
-  width: calc(100% + 10px);
-}
-
-.terminal-row .terminal-pane::after {
-}
-
-.terminal-row .terminal-pane.experience::after,
-.terminal-row .terminal-pane.achievements::after {
-  left: -10px;
-  width: calc(100% + 10px);
 }
 
 .command {
@@ -84,27 +62,11 @@
 .output {
   color: #e0e0e0; /* Muted gray/white for output */
   white-space: pre-wrap;
-  /* min-height: 200px; */ /* Removed minimum height for the output */
 }
 
 .output-line {
   opacity: 0;
   animation: fade-in 400ms ease-out forwards; /* Increased from 200ms to 400ms */
-}
-
-/* The staggered delay for these will be applied inline by Typewriter.tsx */
-
-
-.indent {
-  margin-left: 20px;
-}
-
-.cursor {
-  display: inline-block;
-  width: 8px;
-  height: 1em;
-  background-color: #e0e0e0;
-  /* animation: blink 1s step-end infinite; */
 }
 
 @keyframes blink {
@@ -116,11 +78,9 @@
 @keyframes tree-bullet-pop {
   from {
     opacity: 0;
-    /* transform: scale(0.8); */
   }
   to {
     opacity: 1;
-    /* transform: scale(1); */
   }
 }
 

@@ -1,0 +1,194 @@
+.projects-container {
+  width: 100%;
+  padding: 10px;
+  font-family: 'monospace', monospace;
+  overflow-x: visible; /* Changed from auto to visible */
+  background-color: #000; /* Deep black-blue background */
+  position: relative; /* Create stacking context */
+  z-index: 1; /* Base stacking context */
+}
+
+.projects-flowchart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+  z-index: 1; /* Base stacking context */
+  overflow: visible; /* Ensure tooltips aren't clipped */
+}
+
+.categories-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  gap: 8px;
+}
+
+.category-node {
+  background-color: #000; /* Deep black-blue background */
+  color: #d4d4d4; /* Light gray for main text */
+  padding: 6px 8px;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  min-width: 70px;
+  font-size: 14px;
+  border: 1px solid #333;
+  border-bottom: 3px solid; /* Will be set dynamically */
+  box-shadow: 0 0 8px rgba(0, 255, 127, 0.2); /* Neon green glow */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.category-name {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px currentColor; /* Glow effect using current color */
+}
+
+.category-badge {
+  font-size: 9px;
+  color: #d4d4d4; /* Light gray for main text */
+  background-color: rgba(0, 0, 0, 0.3); /* Darker background for contrast */
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.projects-row {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 8px; /* Added gap between columns */
+  overflow: visible; /* Ensure tooltips aren't clipped */
+}
+
+.projects-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px; /* Reduced gap */
+  min-width: 70px; /* Reduced minimum width */
+  flex: 1; /* Allow flex to control width */
+  position: relative; /* Create stacking context for tooltips */
+}
+
+.project-node {
+  background-color: #000; /* Deep black-blue background */
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 4px 6px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+  width: 100%;
+  cursor: pointer;
+  overflow: visible; /* Ensure tooltip is not clipped */
+}
+
+.project-node:hover {
+  background-color: #1a1a2e;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(0, 255, 127, 0.4); /* Neon green glow on hover */
+}
+
+.project-link {
+  color: #d4d4d4; /* Light gray for main text */
+  text-decoration: none;
+  font-size: 13px;
+  display: block;
+  font-weight: normal;
+}
+
+.project-link:hover {
+  color: #00ff7f; /* Neon green on hover */
+  text-shadow: 0 0 5px rgba(0, 255, 127, 0.5); /* Neon green glow */
+}
+
+/* Tooltip styles are now handled by JavaScript in Projects.tsx */
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.real-users-tag {
+  display: inline-block;
+  background-color: #ffae00; /* Amber yellow for tags */
+  color: #0a0a0f; /* Dark text for contrast */
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin-top: 2px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(255, 174, 0, 0.3); /* Amber yellow glow */
+}
+
+.private-tag {
+  display: inline-block;
+  background-color: #e53e3e;
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.connection-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.projects-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #d4d4d4; /* Light gray for main text */
+  font-style: italic;
+  font-size: 12px;
+  opacity: 0.8;
+  text-shadow: 0 0 3px rgba(0, 255, 127, 0.3); /* Subtle neon green glow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .projects-flowchart {
+    min-width: 700px; /* Reduced from 1000px */
+  }
+  
+  .category-node {
+    min-width: 80px; /* Reduced from 120px */
+    font-size: 13px; /* Increased from 11px */
+  }
+  
+  .projects-column {
+    min-width: 80px; /* Reduced from 120px */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-flowchart {
+    min-width: 800px; /* Reduced from 1200px */
+  }
+  
+  .category-node {
+    min-width: 90px; /* Reduced from 140px */
+    font-size: 12px; /* Increased from 10px */
+  }
+  
+  .projects-column {
+    min-width: 90px; /* Reduced from 140px */
+  }
+  
+  .project-link {
+    font-size: 12px; /* Increased from 10px */
+  }
+}
