@@ -53,7 +53,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ command, output, delay, minOutp
                 animationDelay: `${index * 50}ms`,
               }}
             >
-              {line}
+              {line.includes('<span') ? <span dangerouslySetInnerHTML={{ __html: line }} /> : line}
             </p>
           ))}
         </div>

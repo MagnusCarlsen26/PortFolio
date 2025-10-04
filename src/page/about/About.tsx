@@ -36,7 +36,7 @@ const About: React.FC = () => {
       <section className={`terminal-pane ${section.className}`} key={section.id}>
         <Typewriter
           command={sectionData.command}
-          output={Array.isArray(sectionData.output) ? sectionData.output : [sectionData.output]}
+          output={Array.isArray(sectionData.output) ? sectionData.output.map(line => line.replace(/\-\-+/g, '<span style="color: #a855f7">$&</span>').replace(/\|/g, '<span style="color: #a855f7">|</span>')) : [sectionData.output]}
           delay={delay}
         />
         {section.hasSkillIcons && <SkillIcons />}

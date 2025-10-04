@@ -6,14 +6,16 @@
   padding-top: 0;
   display: flex;
   flex-direction: column;
+  gap: 1px;
 }
 
 .terminal-pane {
   background-color: #000;
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   padding: 10px;
   box-sizing: border-box;
   position: relative;
+  border-radius: 10px;
   /* min-height: 50px; */ /* Removed minimum height for the panes */
 }
 
@@ -51,7 +53,7 @@
 
 .terminal-row {
   display: flex;
-  /* gap: 10px; */
+  gap: 1px;
 }
 
 .terminal-row .terminal-pane {
