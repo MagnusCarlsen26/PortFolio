@@ -28,9 +28,13 @@ export const aboutData: AboutData = {
   education: {
     command: "$ cat education.txt",
     output: [
-      ">& 2025 IIT Jodhpur - B.Tech AI & Data Science",
-      ">& 2021 JHASV, Surat - Class 12 (93%)",
-      ">& 2019 JHASV, Surat - Class 10 (91%)",
+      "--------------------------------------------------",
+      "| 2025 |  IIT Jodhpur | B.Tech AI & Data Science |",
+      "--------------------------------------------------",
+      "| 2021 | JHASV, Surat |      Class 12 (93%)      |",
+      "--------------------------------------------------",
+      "| 2019 | JHASV, Surat |      Class 10 (91%)      |",
+      "--------------------------------------------------"
     ],
   },
   skills: {
@@ -40,13 +44,13 @@ export const aboutData: AboutData = {
   experience: {
     command: "$ cat experience.log",
     output: [
-      ">& Oasis of Ideas (Feb 2025 – July 2025)",
+      "> Oasis of Ideas (Feb 2025 – July 2025)",
       "- Solely designed, implemented, and maintained an end-to-end system for scraping and processing startup ideas.",
       "- Scraped data from multiple websites using asynchronous Python programming.",
       "- Processed scraped content via multi-stage LLM pipelines powered by OpenAI, DeepSeek, and Gemini.",
       "- Deployed and scaled the system across 8 AWS EC2 instances; used tmux for concurrent task management.",
       "- Built a fully automated pipeline for idea extraction, filtering, and curation using LLMs.",
-      ">& SURVEY PORTAL Software Intern (Dec 2024)",
+      "> SURVEY PORTAL Software Intern (Dec 2024)",
       "- Developed a custom survey website to conduct surveys at IIT Jodhpur.",
       "- The website handled 270 users without any errors during the survey.",
       "- Designed a responsive UI and implemented security measures, such as preventing users from changing or skipping responses to questions.",
