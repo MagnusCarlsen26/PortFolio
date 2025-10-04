@@ -3,6 +3,7 @@ import './about.css';
 import Typewriter from '../../components/Typewriter'; // Import the new Typewriter component
 import SkillIcons from './SkillIcons'; // Import the new SkillIcons component
 import Projects from './Projects'; // Import the new Projects component
+import Blogs from './Blogs'; // Import the new Blogs component
 import { aboutData, TerminalSection } from '../../constants/aboutData';
 
 const About: React.FC = () => {
@@ -107,8 +108,11 @@ const About: React.FC = () => {
         />
         {section.hasSkillIcons && <SkillIcons />}
         {/* Render Projects component if this is the projects section */}
-        {('isComponent' in sectionData && sectionData.isComponent) && <Projects />}
+        {('isComponent' in sectionData && sectionData.isComponent) && section.id === 'projects' && <Projects />}
+        {('isComponent' in sectionData && sectionData.isComponent) && section.id === 'blogs' && <Blogs />}
+        {}
       </section>
+
     );
   };
 
@@ -125,6 +129,7 @@ const About: React.FC = () => {
       <div className='right-column'>
         {renderSection(aboutData.terminalSections[4], 4)}
         {renderSection(aboutData.terminalSections[5], 5)}
+        {renderSection(aboutData.terminalSections[6], 6)}
       </div>
     </div>
   );

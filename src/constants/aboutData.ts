@@ -19,6 +19,10 @@ interface ProjectsDataItem extends AboutDataItem {
   isComponent?: boolean;
 }
 
+interface BlogsDataItem extends AboutDataItem {
+  isComponent?: boolean;
+}
+
 interface AboutData {
   whoami: AboutDataItem;
   education: AboutDataItem;
@@ -26,6 +30,7 @@ interface AboutData {
   experience: ExperienceDataItem;
   achievements: AboutDataItem;
   projects: ProjectsDataItem;
+  blogs: BlogsDataItem;
   terminalSections: TerminalSection[];
 }
 
@@ -85,6 +90,11 @@ export const aboutData: AboutData = {
     output: "", // Empty output since we're rendering a component
     isComponent: true, // Flag to indicate this should render a component
   },
+  blogs: {
+    command: "$ ls blogs/",
+    output: "",
+    isComponent: true,
+  },
   terminalSections: [
     { id: "whoami", className: "whoami", dataKey: "whoami" },
     { id: "education", className: "education", dataKey: "education" },
@@ -92,5 +102,6 @@ export const aboutData: AboutData = {
     { id: "experience", className: "experience", dataKey: "experience" },
     { id: "achievements", className: "achievements", dataKey: "achievements" },
     { id: "projects", className: "projects", dataKey: "projects" },
+    { id: "blogs", className: "blogs", dataKey: "blogs" },
   ],
 };

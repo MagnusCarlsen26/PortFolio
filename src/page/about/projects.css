@@ -3,7 +3,7 @@
   padding: 10px;
   font-family: 'monospace', monospace;
   overflow-x: visible; /* Changed from auto to visible */
-  background-color: #0a0a0f; /* Deep black-blue background */
+  background-color: #000; /* Deep black-blue background */
   position: relative; /* Create stacking context */
   z-index: 1; /* Base stacking context */
 }
@@ -27,7 +27,7 @@
 }
 
 .category-node {
-  background-color: #0a0a0f; /* Deep black-blue background */
+  background-color: #000; /* Deep black-blue background */
   color: #d4d4d4; /* Light gray for main text */
   padding: 6px 8px;
   border-radius: 4px 4px 0 0;
@@ -78,7 +78,7 @@
 }
 
 .project-node {
-  background-color: #0a0a0f; /* Deep black-blue background */
+  background-color: #000; /* Deep black-blue background */
   border: 1px solid #333;
   border-radius: 3px;
   padding: 4px 6px;
