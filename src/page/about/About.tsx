@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './about.css';
 import Typewriter from '../../components/Typewriter'; // Import the new Typewriter component
 import SkillIcons from './SkillIcons'; // Import the new SkillIcons component
+import Projects from './Projects'; // Import the new Projects component
 import { aboutData, TerminalSection } from '../../constants/aboutData';
 
 const About: React.FC = () => {
@@ -105,6 +106,8 @@ const About: React.FC = () => {
           delay={delay}
         />
         {section.hasSkillIcons && <SkillIcons />}
+        {/* Render Projects component if this is the projects section */}
+        {('isComponent' in sectionData && sectionData.isComponent) && <Projects />}
       </section>
     );
   };
@@ -116,10 +119,10 @@ const About: React.FC = () => {
         {renderSection(aboutData.terminalSections[0], 0)}
         {renderSection(aboutData.terminalSections[1], 1)}
         {renderSection(aboutData.terminalSections[3], 3)}
+        {renderSection(aboutData.terminalSections[2], 2)}
       </div>
       
       <div className='right-column'>
-        {renderSection(aboutData.terminalSections[2], 2)}
         {renderSection(aboutData.terminalSections[4], 4)}
         {renderSection(aboutData.terminalSections[5], 5)}
       </div>

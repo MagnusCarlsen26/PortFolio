@@ -16,6 +16,7 @@ interface ExperienceDataItem extends AboutDataItem {
 
 interface ProjectsDataItem extends AboutDataItem {
   companyColors?: string[];
+  isComponent?: boolean;
 }
 
 interface AboutData {
@@ -81,14 +82,8 @@ export const aboutData: AboutData = {
   },
   projects: {
     command: "$ tree projects/",
-    output: [
-      "├── PRACTO SCRAPER (Dr. Dweepobotee Brahma - Dec 2024)",
-      "│   ├── [green]Scraped[/green] data of [amber]6600 doctors[/amber] in [amber]2 hours[/amber].",
-      "│   ├── [green]Implemented[/green] a [cyan]master-worker architecture[/cyan] to accomplish the task.",
-      "│   ├── [green]Deployed[/green] the master using [cyan]Firebase Functions[/cyan] and the worker using [cyan]Docker containers[/cyan] on [cyan]AWS Elastic Kubernetes Service (EKS)[/cyan].",
-      "│   └── [green]Addressed[/green] challenges related to efficiency, code reusability, and race conditions in [cyan]Firestore[/cyan].",
-    ],
-    companyColors: ["#f59e0b"],
+    output: "", // Empty output since we're rendering a component
+    isComponent: true, // Flag to indicate this should render a component
   },
   terminalSections: [
     { id: "whoami", className: "whoami", dataKey: "whoami" },
