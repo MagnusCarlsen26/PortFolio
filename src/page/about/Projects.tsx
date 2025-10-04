@@ -34,6 +34,7 @@ const Projects: React.FC = () => {
     const target = e.currentTarget;
     const rect = target.getBoundingClientRect();
     const tooltip = target.getAttribute('data-tooltip');
+    const categoryColor = target.getAttribute('data-category-color') || '#00ff7f'; // Get the project's category color
     
     // Clear any existing hide timeout
     if (hideTimeout) {
@@ -54,14 +55,16 @@ const Projects: React.FC = () => {
       tooltipEl.style.color = '#d4d4d4';
       tooltipEl.style.padding = '4px 8px';
       tooltipEl.style.borderRadius = '4px';
-      tooltipEl.style.fontSize = '11px';
+      tooltipEl.style.fontSize = '14px';
       tooltipEl.style.whiteSpace = 'nowrap';
-      tooltipEl.style.border = '1px solid #00ff7f';
-      tooltipEl.style.boxShadow = '0 0 8px rgba(0, 255, 127, 0.3)';
       tooltipEl.style.opacity = '0';
       tooltipEl.style.transition = 'opacity 0.2s ease';
       document.body.appendChild(tooltipEl);
     }
+    
+    // Update tooltip colors to match project color
+    tooltipEl.style.border = `1px solid ${categoryColor}`;
+    tooltipEl.style.boxShadow = `0 0 8px ${categoryColor}40`; // Add transparency to the shadow
     
     tooltipEl.textContent = tooltip || '';
     
@@ -162,6 +165,7 @@ const Projects: React.FC = () => {
                   key={projectIndex}
                   className="project-node"
                   style={{ borderColor: getCategoryColor(category.name) }}
+                  data-category-color={getCategoryColor(category.name)}
                   data-tooltip={getProjectTooltip(project)}
                   onMouseEnter={handleProjectHover}
                   onMouseLeave={handleProjectLeave}
