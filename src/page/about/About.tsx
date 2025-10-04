@@ -32,11 +32,76 @@ const About: React.FC = () => {
   const renderSection = (section: TerminalSection, index: number) => {
     const sectionData = aboutData[section.dataKey];
     const delay = calculateDelay(index);
+    
+    // Function to color company names dynamically
+    const colorCompanyNames = (text: string, colors: string[] = []): string => {
+      if (colors.length === 0) return text;
+      
+      let coloredText = text;
+      colors.forEach((color, colorIndex) => {
+        // Find lines that start with > or ├── which typically indicate company/project names
+        const companyPattern = colorIndex === 0
+          ? /^>(.+?)(\s*\([^)]*\))?$/gm  // Match lines starting with >
+          : /^├──(.+?)(\s*\([^)]*\))?$/gm; // Match lines starting with ├──
+        
+        coloredText = coloredText.replace(companyPattern, (match) => {
+          return `<span style="color: ${color}; font-weight: bold;">${match}</span>`;
+        });
+      });
+      
+      return coloredText;
+    };
+    
+    // Function to process color tags
+    const processColorTags = (text: string): string => {
+      let processedText = text;
+      
+      // Process color tags: [color]text[/color]
+      processedText = processedText.replace(
+        /\[(green|cyan|amber|magenta|gray)\]([^[]+)\[\/\1\]/g,
+        (match, color, content) => {
+          const colorMap: { [key: string]: string } = {
+            green: '#10b981',    // emerald-500
+            cyan: '#06b6d4',     // cyan-500
+            amber: '#f59e0b',    // amber-500
+            magenta: '#ec4899',  // pink-500
+            gray: '#6b7280'      // gray-500
+          };
+          
+          return `<span style="color: ${colorMap[color]};">${content}</span>`;
+        }
+      );
+      
+      // Process timeline dates in brackets to be gray
+      processedText = processedText.replace(
+        /\[([^\]]+(?:\d{4}[^\]]*)?)\]/g,
+        '<span style="color: #6b7280;">[$1]</span>'
+      );
+      
+      return processedText;
+    };
+    
     return (
       <section className={`terminal-pane ${section.className}`} key={section.id}>
         <Typewriter
           command={sectionData.command}
-          output={Array.isArray(sectionData.output) ? sectionData.output.map(line => line.replace(/\-\-+/g, '<span style="color: #a855f7">$&</span>').replace(/\|/g, '<span style="color: #a855f7">|</span>')) : [sectionData.output]}
+          output={Array.isArray(sectionData.output)
+            ? sectionData.output.map(line => {
+                let processedLine = line
+                  .replace(/\-\-+/g, '<span style="color: #a855f7">$&</span>')
+                  .replace(/\|/g, '<span style="color: #a855f7">|</span>');
+                
+                // Apply company colors if available
+                if ('companyColors' in sectionData && sectionData.companyColors && sectionData.companyColors.length > 0) {
+                  processedLine = colorCompanyNames(processedLine, sectionData.companyColors);
+                }
+                
+                // Process color tags
+                processedLine = processColorTags(processedLine);
+                
+                return processedLine;
+              })
+            : [sectionData.output]}
           delay={delay}
         />
         {section.hasSkillIcons && <SkillIcons />}

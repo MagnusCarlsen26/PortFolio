@@ -10,13 +10,21 @@ interface AboutDataItem {
   output: string[] | string;
 }
 
+interface ExperienceDataItem extends AboutDataItem {
+  companyColors?: string[];
+}
+
+interface ProjectsDataItem extends AboutDataItem {
+  companyColors?: string[];
+}
+
 interface AboutData {
   whoami: AboutDataItem;
   education: AboutDataItem;
   skills: AboutDataItem;
-  experience: AboutDataItem;
+  experience: ExperienceDataItem;
   achievements: AboutDataItem;
-  projects: AboutDataItem;
+  projects: ProjectsDataItem;
   terminalSections: TerminalSection[];
 }
 
@@ -42,19 +50,19 @@ export const aboutData: AboutData = {
   experience: {
     command: "$ cat experience.log",
     output: [
-      "> Oasis of Ideas (Feb 2025 – July 2025)",
-      "- Solely designed, implemented, and maintained an end-to-end system for scraping and processing startup ideas.",
-      "- Scraped data from multiple websites using asynchronous Python programming.",
-      "- Processed scraped content via multi-stage LLM pipelines powered by OpenAI, DeepSeek, and Gemini.",
-      "- Deployed and scaled the system across 8 AWS EC2 instances; used tmux for concurrent task management.",
-      "- Built a fully automated pipeline for idea extraction, filtering, and curation using LLMs.",
+      "> Oasis of Ideas - SWE  [Feb 2025 – July 2025]",
+      " ▸ [green]Designed[/green] and [green]maintained[/green] an end-to-end system for startup idea processing.",
+      " ▸ [green]Scraped[/green] data from websites using [cyan]asynchronous Python[/cyan].",
+      " ▸ [green]Processed[/green] content via [cyan]LLM pipelines[/cyan] (OpenAI, DeepSeek, Gemini).",
+      " ▸ [green]Deployed[/green] system across [amber]8 AWS EC2 instances[/amber]; used [cyan]tmux[/cyan] for task management.",
+      " ▸ [green]Built[/green] a [green]fully automated pipeline[/green] for idea extraction and curation.",
       " ",
-      "> SURVEY PORTAL Software Intern (Dec 2024)",
-      "- Developed a custom survey website to conduct surveys at IIT Jodhpur.",
-      "- The website handled 270 users without any errors during the survey.",
-      "- Designed a responsive UI and implemented security measures, such as preventing users from changing or skipping responses to questions.",
-      "- Created a user-friendly admin panel to manage user access effectively.",
+      "> Survey Portal - SWE Intern  [Dec 2024]",
+      " ▸ [green]Developed[/green] a survey website for IIT Jodhpur; handled [amber]270 users[/amber] without errors.",
+      " ▸ [green]Designed[/green] a [cyan]responsive UI[/cyan] and added [cyan]security measures[/cyan] to prevent misuse.",
+      " ▸ [green]Created[/green] an [green]admin panel[/green] for effective user access management.",
     ],
+    companyColors: ["#FF00FF", "#FF00FF"],
   },
   achievements: {
     command: "$ ls achievements/",
@@ -75,11 +83,12 @@ export const aboutData: AboutData = {
     command: "$ tree projects/",
     output: [
       "├── PRACTO SCRAPER (Dr. Dweepobotee Brahma - Dec 2024)",
-      "│   ├── Scraped data of 6600 doctors in 2 hours.",
-      "│   ├── Implemented a master-worker architecture to accomplish the task.",
-      "│   ├── Deployed the master using Firebase Functions and the worker using Docker containers on AWS Elastic Kubernetes Service (EKS).",
-      "│   └── Addressed challenges related to efficiency, code reusability, and race conditions in Firestore.",
+      "│   ├── [green]Scraped[/green] data of [amber]6600 doctors[/amber] in [amber]2 hours[/amber].",
+      "│   ├── [green]Implemented[/green] a [cyan]master-worker architecture[/cyan] to accomplish the task.",
+      "│   ├── [green]Deployed[/green] the master using [cyan]Firebase Functions[/cyan] and the worker using [cyan]Docker containers[/cyan] on [cyan]AWS Elastic Kubernetes Service (EKS)[/cyan].",
+      "│   └── [green]Addressed[/green] challenges related to efficiency, code reusability, and race conditions in [cyan]Firestore[/cyan].",
     ],
+    companyColors: ["#f59e0b"],
   },
   terminalSections: [
     { id: "whoami", className: "whoami", dataKey: "whoami" },
