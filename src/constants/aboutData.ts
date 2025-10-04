@@ -60,12 +60,16 @@ export const aboutData: AboutData = {
   achievements: {
     command: "$ ls achievements/",
     output: [
-      "Pupil at Codeforces (peak rating 1369)",
-      "Secured 352 Global rank in CodeChef Starters 92 (Div. 2)",
-      "Secured 1700 rank in Google Kickstart Round C 2022",
-      "Among top 0.8% in JEE Advanced 2021",
-      "Discovered auth vulnerability in college ERP system",
-      "Made an extension to fill feedback for all courses in one click",
+      "------------------------------------------",
+      "|      Achievement       |     Rank      |",
+      "------------------------------------------",
+      "|      Codeforces        | Pupil (1369)  |",
+      "|  CodeChef Starters 92  | 352 (Global)  |",
+      "|  Google Kickstart 2022 |     1700      |",
+      "|    JEE Advanced 2021   |   Top 0.8%    |",
+      "------------------------------------------",
+      "> Discovered auth vulnerability in college ERP system",
+      "> Made an extension to fill feedback for all courses in one click",
     ],
   },
   projects: {
