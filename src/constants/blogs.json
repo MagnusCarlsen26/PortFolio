@@ -1,48 +1,17 @@
 {
     "TECH": [
         {
-            "id": "another-id",
-            "slug": "another-blog",
-            "title": "Another Blog Post with a Significantly Longer Title to Test Responsiveness",
+            "id": "k8s-id",
+            "slug": "kubernetes-cluster-i-shouldnt-have-built",
+            "title": "The Kubernetes Cluster I Shouldn't Have Built",
             "category": "TECH",
-            "date": "15 February 2024",
-            "year": 2024,
+            "date": "4 October 2025",
+            "year": 2025,
             "favourite": true,
-            "description": "A deep dive into responsive design and how long titles can affect layout and user experience."
-        },
-        {
-            "id": "fifth-id",
-            "slug": "fifth-blog",
-            "title": "My Fifth Blog",
-            "category": "TECH",
-            "date": "May 24",
-            "year": 2024,
-            "favourite": true,
-            "description": "A personal reflection on recent tech trends and my journey in software development."
+            "description": "A story about overengineering a simple scraping task with Kubernetes, and the lessons learned from it.",
+            "markdownFile": "kubernetes-cluster.md"
         }
     ],
-    "CASUAL TECH": [
-        {
-            "id": "third-id",
-            "slug": "third-blog-post",
-            "title": "The Third Blog Entry Which Also Has an Extended Description",
-            "category": "CASUAL TECH",
-            "date": "March 24",
-            "year": 2024,
-            "favourite": true,
-            "description": "Exploring technology in everyday life and how casual tech impacts our routines."
-        }
-    ],
-    "NON TECH": [
-        {
-            "id": "fourth-id",
-            "slug": "fourth-blog-post",
-            "title": "A Fourth Blog Entry About Various and Sundry Things that Might Interest You",
-            "category": "NON TECH",
-            "date": "April 24",
-            "year": 2024,
-            "favourite": true,
-            "description": "A collection of thoughts and stories unrelated to technology, for a change of pace."
-        }
-    ]
+    "CASUAL TECH": [],
+    "NON TECH": []
 }

@@ -8,5 +8,6 @@ export type Blog = {
     year: number;
     description: string;
     favourite: boolean;
+    markdownFile: string;
 
 };

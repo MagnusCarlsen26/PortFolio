@@ -160,3 +160,167 @@
     color: var(--blog-title-description-color);
 
 }
+
+/* Markdown Content Styling */
+.markdown-content {
+    line-height: 1.6;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--blog-title-bg-color);
+    font-weight: 600;
+}
+
+.markdown-content h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--blog-title-bg-color);
+    padding-bottom: 0.5rem;
+}
+
+.markdown-content h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--blog-title-description-color);
+    padding-bottom: 0.3rem;
+}
+
+.markdown-content h3 {
+    font-size: 1.5rem;
+}
+
+.markdown-content ul {
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+}
+
+.markdown-content li {
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+}
+
+.markdown-content li::before {
+    content: '⯈  ';
+    color: var(--blog-title-bg-color); /* You can adjust the color as needed */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em; /* Adjust as needed for alignment */
+    margin-left: -1em; /* Counteract padding-left on ul */
+}
+
+.markdown-content ol {
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+    list-style-type: decimal-leading-zero;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid var(--blog-title-bg-color);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--blog-title-description-color);
+    background-color: rgba(34, 197, 94, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.markdown-content code {
+    background-color: rgba(34, 197, 94, 0.2);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.markdown-content pre {
+    background-color: #0d1f16;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.markdown-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #d1fae5;
+}
+
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+    border: 1px solid var(--blog-title-description-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.markdown-content th {
+    background-color: rgba(34, 197, 94, 0.2);
+    font-weight: 600;
+}
+
+.markdown-content a {
+    color: var(--blog-title-bg-color);
+    text-decoration: underline;
+}
+
+.markdown-content a:hover {
+    color: #16a34a;
+}
+
+.markdown-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.markdown-content hr {
+    border: none;
+    border-top: 1px solid var(--blog-title-description-color);
+    margin: 2rem 0;
+}
+
+/* Code highlighting theme adjustments */
+.markdown-content .hljs {
+    background-color: #0d1f16;
+    color: #d1fae5;
+}
+
+/* Blog Image Styling */
+.markdown-content p.image-paragraph {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.blog-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image-caption {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--blog-title-description-color);
+    font-style: italic;
+}
