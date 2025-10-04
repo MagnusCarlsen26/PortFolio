@@ -3,6 +3,7 @@ import PhoneSvg from "../../assets/svgs/PhoneSvg";
 import EmailSvg from "../../assets/svgs/EmailSvg";
 import LinkedInSvg from "../../assets/svgs/LinkedInSvg";
 import TwitterSvg from "../../assets/svgs/TwitterSvg";
+import GitHubSvg from "../../assets/svgs/GitHubSvg";
 
 export default function Footer() {
     return (
@@ -19,6 +20,11 @@ export default function Footer() {
                 <p>
                     <a href="https://x.com/KHUSHALSINDHAV2" target="_blank" rel="noopener noreferrer">
                     <TwitterSvg /> 
+                    </a>
+                </p>
+                <p>
+                    <a href="http://github.com/MagnusCarlsen26/" target="_blank" rel="noopener noreferrer">
+                        <GitHubSvg /> 
                     </a>
                 </p>
             </div>
