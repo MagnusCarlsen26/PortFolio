@@ -46,19 +46,18 @@ const About: React.FC = () => {
 
   return (
     <div className="about-container">
-      {renderSection(aboutData.terminalSections[0], 0)}
 
-      <div className="terminal-row">
+      <div className='left-column'>
+        {renderSection(aboutData.terminalSections[0], 0)}
         {renderSection(aboutData.terminalSections[1], 1)}
-        {renderSection(aboutData.terminalSections[2], 2)}
-      </div>
-
-      <div className="terminal-row">
         {renderSection(aboutData.terminalSections[3], 3)}
-        {renderSection(aboutData.terminalSections[4], 4)}
       </div>
-
-      {renderSection(aboutData.terminalSections[5], 5)}
+      
+      <div className='right-column'>
+        {renderSection(aboutData.terminalSections[2], 2)}
+        {renderSection(aboutData.terminalSections[4], 4)}
+        {renderSection(aboutData.terminalSections[5], 5)}
+      </div>
     </div>
   );
 };

@@ -48,6 +48,7 @@ export const aboutData: AboutData = {
       "- Processed scraped content via multi-stage LLM pipelines powered by OpenAI, DeepSeek, and Gemini.",
       "- Deployed and scaled the system across 8 AWS EC2 instances; used tmux for concurrent task management.",
       "- Built a fully automated pipeline for idea extraction, filtering, and curation using LLMs.",
+      " ",
       "> SURVEY PORTAL Software Intern (Dec 2024)",
       "- Developed a custom survey website to conduct surveys at IIT Jodhpur.",
       "- The website handled 270 users without any errors during the survey.",
