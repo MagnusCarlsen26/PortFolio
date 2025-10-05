@@ -17,9 +17,205 @@ nav {
     height: 100%;
     width: 100%;
     border-radius: 30px;
-
-    /* background-color: rgba(255, 255, 255, 0.1); */
     padding: 5px 10px;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.hamburger-line {
+    width: 20px;
+    height: 2px;
+    background-color: #a7f3d0;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger-line.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100%;
+    background-color: #172C35;
+    border-right: 2px solid #a7f3d0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-overlay.open .mobile-menu {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #a7f3d0;
+}
+
+.mobile-menu-title {
+    color: #a7f3d0;
+    font-family: 'monospace', monospace;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    color: #a7f3d0;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+    color: white;
+}
+
+.mobile-menu-items {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.mobile-menu-item {
+    color: #a7f3d0;
+    font-family: 'monospace', monospace;
+    font-size: 1.1em;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-left: 3px solid transparent;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-item:hover {
+    background-color: rgba(167, 243, 208, 0.1);
+    color: white;
+    border-left-color: #a7f3d0;
+}
+
+.mobile-menu-item.active {
+    background-color: rgba(167, 243, 208, 0.2);
+    color: #a7f3d0;
+    font-weight: bold;
+    border-left-color: #a7f3d0;
+}
+
+.mobile-active-page {
+    color: #a7f3d0;
+    font-family: 'monospace', monospace;
+    font-size: 0.9em;
+    padding: 8px 12px;
+    border: 1px solid #a7f3d0;
+    border-radius: 15px;
+    background-color: rgba(167, 243, 208, 0.1);
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .navbar-main {
+        display: none;
+    }
+
+    .mobile-active-page {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 15px;
+        padding-bottom: 25px;
+    }
+
+    .navbar-main {
+        padding: 5px 10px;
+    }
+
+    .navbar-brand .navbar-home-link {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .mobile-menu {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .mobile-menu-item {
+        font-size: 1em;
+        padding: 12px 15px;
+        min-height: 45px;
+    }
 }
 
 .navbar-home-link {
