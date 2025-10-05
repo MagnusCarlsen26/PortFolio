@@ -38,10 +38,27 @@
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid transparent; /* Blinking cursor effect */
-    animation: 
+    animation:
         typewriter 3s steps(20, end) forwards,
         blink-caret 0.75s step-end infinite;
     letter-spacing: 0.1em; /* Wider letter spacing */
+}
+
+/* Mobile responsive for name display */
+@media (max-width: 768px) {
+    .name-display h1 {
+        font-size: 2.5em;
+        letter-spacing: 0.05em;
+        white-space: normal;
+        overflow: visible;
+        border-right: none;
+        animation: none;
+    }
+
+    .name-display {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .cursor {
@@ -63,7 +80,7 @@
     margin-top: 32px;
     padding: 20px 40px;
     border-radius: 8px;
-    
+
 }
 
 .you-are-here-for-section p {
@@ -91,6 +108,7 @@
     background-color: #96DABB;
     color: #134e4a;
     font-weight: bold;
+    min-height: 44px; /* Touch target size */
 }
     
 .terminal-button:hover {
@@ -109,4 +127,44 @@
 
 .terminal-prefix {
     margin-right: 8px;
+}
+
+/* Mobile responsive for buttons and sections */
+@media (max-width: 768px) {
+    .you-are-here-for-section {
+        margin-top: 24px;
+        padding: 15px 20px;
+    }
+
+    .you-are-here-for-section p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .buttons-container {
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .terminal-button {
+        width: 100%;
+        max-width: 280px;
+        font-size: 1em;
+        padding: 14px 20px;
+        justify-content: center;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .home-container {
+        padding: 15px;
+    }
+
+    .terminal-button {
+        max-width: 240px;
+        font-size: 0.95em;
+    }
 }
