@@ -14,19 +14,36 @@ export default function Footer() {
                 <p><a href="mailto:khushal.sindhav26@gmail.com"><EmailSvg /> khushal.sindhav26@gmail.com</a></p>
                 <p>
                     <a href="https://www.linkedin.com/in/khushal-sindhav-109602229/" target="_blank" rel="noopener noreferrer">
-                        <LinkedInSvg /> 
+                        <LinkedInSvg />
                     </a>
                 </p>
                 <p>
                     <a href="https://x.com/KHUSHALSINDHAV2" target="_blank" rel="noopener noreferrer">
-                    <TwitterSvg /> 
+                    <TwitterSvg />
                     </a>
                 </p>
                 <p>
                     <a href="http://github.com/MagnusCarlsen26/" target="_blank" rel="noopener noreferrer">
-                        <GitHubSvg /> 
+                        <GitHubSvg />
                     </a>
                 </p>
+                <div className="footer-social">
+                    <p>
+                        <a href="https://www.linkedin.com/in/khushal-sindhav-109602229/" target="_blank" rel="noopener noreferrer">
+                            <LinkedInSvg />
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://x.com/KHUSHALSINDHAV2" target="_blank" rel="noopener noreferrer">
+                        <TwitterSvg />
+                        </a>
+                    </p>
+                    <p>
+                        <a href="http://github.com/MagnusCarlsen26/" target="_blank" rel="noopener noreferrer">
+                            <GitHubSvg />
+                        </a>
+                    </p>
+                </div>
             </div>
         </footer>
     );
