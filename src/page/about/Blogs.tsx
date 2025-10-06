@@ -20,7 +20,7 @@ const Blogs: React.FC = () => {
   const navigate = useNavigate();
   
   const handleBlogClick = (slug: string) => {
-    navigate(`/blogs/${slug}`);
+    navigate(`/blog/${slug}`);
   };
 
   return (
