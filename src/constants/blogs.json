@@ -10,6 +10,17 @@
             "favourite": true,
             "description": "A story about overengineering a simple scraping task with Kubernetes, and the lessons learned from it.",
             "markdownFile": "kubernetes-cluster.md"
+        },
+        {
+            "id": "wrong-way-ai-id",
+            "slug": "wrong-way-to-code-with-ai",
+            "title": "The Wrong Way to Code with AI (And the Right One)",
+            "category": "TECH",
+            "date": "6 October 2025",
+            "year": 2025,
+            "favourite": true,
+            "description": "My opinions and experience about where AI should and shouldn't be used in software development.",
+            "markdownFile": "ai-vibe-coding.md"
         }
     ],
     "CASUAL TECH": [],
