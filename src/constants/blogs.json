@@ -24,5 +24,17 @@
         }
     ],
     "CASUAL TECH": [],
-    "NON TECH": []
+    "NON TECH": [
+        {
+            "id": "smart-dumb-id",
+            "slug": "how-not-to-be-a-smart-dumb-person",
+            "title": "How not to be a \"Smart-Dumb\" person",
+            "category": "NON TECH",
+            "date": "1 November 2025",
+            "year": 2025,
+            "favourite": true,
+            "description": "My experience with really smart people who had dumb characteristics, and lessons learned.",
+            "markdownFile": "smart-dumb.md"
+        }
+    ]
 }
