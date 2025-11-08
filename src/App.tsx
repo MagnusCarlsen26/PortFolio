@@ -6,6 +6,8 @@ import Navbar from './page/navbar/Navbar';
 import Home from './page/home/Home'; // Import the new Home component
 import Contact from './page/contact/Contact'; // Import the new Contact component
 import About from './page/about/About'; // Import the new About component
+import Tools from './page/tools/Tools'
+import PasteIO from './page/tools/pasteIO/pasteIO'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/blogs" element={<BlogHome />} />
             <Route path="/blog/read/:slug" element={<BlogRead />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/tools/pasteIO" element={<PasteIO />} />
           </Routes>
       </BrowserRouter>
     </div>

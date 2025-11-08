@@ -115,6 +115,7 @@
     color: #134e4a;
     font-weight: bold;
     min-height: 44px; /* Touch target size */
+    max-height: 44px;
 }
     
 .terminal-button:hover {

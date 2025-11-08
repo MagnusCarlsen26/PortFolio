@@ -28,11 +28,10 @@ export default function Home() {
                     <div onMouseDown={() => navigate("/blogs")} className="terminal-button">
                         <span className="terminal-prefix">B.</span> Blog mode
                     </div>
-                    <div onMouseDown={() => navigate("/blogs")} className="terminal-button">
-                        <span className="terminal-prefix">C.</span> Project mode
+                    <div onMouseDown={() => navigate("/tools")} className="terminal-button">
+                        <span className="terminal-prefix">C.</span> Tools
                     </div>
                     
-
                 </div>
             </div>
 
